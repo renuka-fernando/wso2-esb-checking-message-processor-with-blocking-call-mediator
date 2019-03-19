@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="HelloProxy" startOnLoad="true" transports="https http" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+            <log>
+                <property name="Request for Hello Proxy" value="***********************************************"/>
+            </log>
+            <call>
+                <endpoint key="hello-endpoint"/>
+            </call>
+            <log>
+                <property name="Response from Hello Proxy" value="***********************************************"/>
+            </log>
+            <switch source="$axis2:HTTP_SC">
+                <case regex="2[0-9][0-9]">
+                    <log>
+                        <property name="Success (2xx)" value="Message was successfully sent to target API."/>
+                    </log>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
+                    <respond/>
+                </case>
+                <case regex="500">
+                    <log>
+                        <property name="Fail (500)" value="Message was failed to sent to target API. *******"/>
+                    </log>
+                    <respond/>
+                </case>
+                <default>
+                    <log>
+                        <property name="Default (not 2xx or 5xx)" value="Default case *******************"/>
+                    </log>
+                    <property name="HTTP_SC" scope="axis2" type="STRING" value="200"/>
+                    <respond/>
+                </default>
+            </switch>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+</proxy>

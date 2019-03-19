@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/hello" name="HelloApi" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" url-mapping="/greeting">
+        <inSequence>
+            <log>
+                <property name="Incoming Request to ESB hello API" value="******************************************"/>
+            </log>
+            <!-- <property name="FORCE_SC_ACCEPTED" value="true" scope="axis2" type="STRING"/> -->
+            <property name="OUT_ONLY" scope="default" type="STRING" value="false"/>
+            <log>
+                <property name="Storing in Message-Store" value="******************************************"/>
+            </log>
+            <store messageStore="make-hello-message-store"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

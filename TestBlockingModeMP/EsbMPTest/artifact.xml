@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="HelloProxy" groupId="com.example.EsbMPTest.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/HelloProxy.xml</file>
+    </artifact>
+    <artifact name="HelloApi" groupId="com.example.EsbMPTest.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/HelloApi.xml</file>
+    </artifact>
+    <artifact name="hello-endpoint" groupId="com.example.EsbMPTest.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/hello-endpoint.xml</file>
+    </artifact>
+    <artifact name="make-hello-message-store" groupId="com.example.EsbMPTest.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/make-hello-message-store.xml</file>
+    </artifact>
+    <artifact name="make-hello-message-processor" groupId="com.example.EsbMPTest.message-processors" version="1.0.0" type="synapse/message-processors" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-processors/make-hello-message-processor.xml</file>
+    </artifact>
+    <artifact name="hello-proxy-endpoint" groupId="com.example.EsbMPTest.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/hello-proxy-endpoint.xml</file>
+    </artifact>
+    <artifact name="reply-sequence" groupId="com.example.EsbMPTest.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/reply-sequence.xml</file>
+    </artifact>
+    <artifact name="fault-sequence" groupId="com.example.EsbMPTest.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/fault-sequence.xml</file>
+    </artifact>
+    <artifact name="deactivate-sequence" groupId="com.example.EsbMPTest.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/deactivate-sequence.xml</file>
+    </artifact>
+</artifacts>
